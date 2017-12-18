@@ -1,0 +1,16 @@
+<resources>
+    <string-array name="scool">
+        <item>TSP</item>
+        <item>TEM</item>
+    </string-array>
+    <string name="app_name">WikINT</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Filtres à venir</string>
+    <string name="title_activity_event_detail">EventDetail</string>
+    <string name="title_activity_association_detail">AssociationDetail</string>
+    <string name="title_activity_add_event">AddEvent</string>
+    <string name="title_activity_modify_asso">ModifyAsso</string>
+</resources>

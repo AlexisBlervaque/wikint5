@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "name": "ASINT 2017 - Fireballs",
+    "president": "Perrin Alexis",
+    "local": "RDC du Foyer",
+    "description": "Qu'est ce que c'est ? L'ASINT comme son nom l'indique, est l'association qui gère toutes les activités sportives des étudiants de nos deux écoles, mais cela n'en fait pas le classique BDS que l'on y trouve dans les autres écoles.C'est bien plus que cela, il s'agit en effet de la deuxième association du campus, avec une identité et des valeurs fortes, qui tiennent une place de choix dans la vie de l'INT. Il sera d'ailleurs difficile de passer à côté des polos roses pendant la SEI et le WEI, alors puisque l'ASINT vaut mieux qu'un long discours, on t'invite à venir découvrir notre univers toute la semaine....Qu'est ce qu'on y fait ?Cotisez et vous pourrez profiter de toutes les infrastructures sportives de notre beau campus: terrains de tennis, terrain de basket, gymnase, salle de musculation, street workout! Vous pourrez aussi pratiquer en loisirs ou en compétition (championnats universitaires) des sports encadrés par des professionnels tels que: Rugby, Foot, Hand, Basket, Volley, Badminton,Tennis, Sports de combat, Musculation (tous les jours de la semaine) ! Des partenariats avec des clubs d'équitation, d'escalade et de golf existent et permettent de pratiquer ces sports à prix réduit._Mais l'ASINT c'est aussi 3 soirées, dont celle de la SEI en collaboration avec le BDA, des événements sportifs, et bien sûr le Week End Ski !",
+    "pictures": ["asint_logo", "cover_asint"],
+    "members": ["Perrin Alexis", "Lavric Valentin", "Bonnefous Pierrick", "Finkenberg Clara", "Leonhardt Laura"],
+    "id_Events": ["0"]
+  },
+  {
+    "id": "2",
+    "name": "BDE 2017 - Apocalypse",
+    "president": "Pradère Théo",
+    "local": "RDC du Foyer",
+    "description": "Avec : une semaine et un week-end d’intégration à ne rater sous aucun prétexte, des soirées de folies et des voyages dans les capitales Européennes, tu n’auras pas le temps de t’ennuyer ! Tu pourras aussi renforcer tes liens auprès de grandes entreprises lors de journées professionnelles organisées par nos soins. Tu ne pourras pas nous louper avec nos polos bleus sur les épaules, n’hésite surtout pas à venir nous voir si tu as la moindre question lors de ton arrivée, nous serons là pour t’accueillir !Comment faire partie du BDE ? La tâche est difficile mais la satisfaction n’en est que plus grande. Tu as certainement entendu parler des célèbres campagnes BDE dans les plus grandes Écoles, rien à voir avec la nôtre ! C’est L’ÉVÉNEMENT incontournable de l’année, tout le campus est rythmé autour de ces mois de campagne où tu devras montrer au campus que tu es à la hauteur de tes ambitions ! Rien de mieux pour trouver une nouvelle famille et réaliser les événements les plus fous, impensables à ton arrivée. Alors rejoins les plus motivés de ta promo et sois prêt pour marquer à ton tour l’histoire de nos deux écoles à tout jamais !",
+    "pictures": ["logo_bde", "cover_bde"],
+    "members": ["Pradère Théo", "Jordan", "Yann", "Poncet", "Borgna"],
+    "id_Events": ["1"]
+  }
+]

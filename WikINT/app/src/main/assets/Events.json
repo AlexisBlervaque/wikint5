@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "name": "Soirée Halloween : Cli'nique Psychia'Trique",
+    "firstDate": "Oct 27, 2017 22:00:00 AM",
+    "endDate": "Oct 28, 2017 04:00:00 AM",
+    "description": "SOIRÉE HALLOWEEN 2017 - CLI'NIQUE PSYCHIA'TRIQUE : BIENVENUE A SHOT?TER ISLAND.Oyez, Oyez,L'ASINT Fireballs vous convie à la soirée la plus sale de l'année en ce vendredi 27 octobre. Pénétrez dans la Cli'nique Psychia'trique et soyez prêts à affronter vos pires cauchemars.Hissez les voiles de votre folie, laissez-vous guider par les flots incessants de votre dépravation. Vous accosterez alors à Shot'ter Island, lieu de débauche et de dérèglement.Que vous soyez un cochon malade ou une infirmière déréglée, pénétrez en ces lieux où vos fantasmes deviendront réalité.",
+    "lieu": "Télécom SudParis - Foyer",
+    "images": ["clinique"],
+    "id_association": "0"
+  },
+  {
+    "id": "2",
+    "name": "Soirée Parrainage - Divina Vesperum",
+    "firstDate": "Oct 10, 2017 22:00:00 AM",
+    "endDate": "Oct 11, 2017 04:00:00 AM",
+    "description": "Ave jeunes INTiens INTtiennes !Retour vers le passé ! Divina Vesperum (Soirée Divine), la soirée parrainage organisée par le BDE, vous fera suivre les traces des pharaons et vous plongera dans les doux plaisirs égyptiens. Soyez Cléopâtre, Ramses ou Ré. Les Egyptiens et leurs chats ne vous conviennent pas ? Venez vivre une vraie orgie greco-romaine, soyez maître de l'Olympe et délectez-vous d'hydromel, de vodka et de vodka. Préparez vous à la Divina Vesperum par Toutatis.",
+    "lieu": "Télécom SudParis - Foyer",
+    "images": ["cover_bde"],
+    "id_association": "1"
+  }
+]
