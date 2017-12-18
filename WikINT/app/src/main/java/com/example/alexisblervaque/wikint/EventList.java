@@ -251,7 +251,7 @@ public class EventList extends Fragment {
         notifyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseInstanceId 
+
             }
         });
 

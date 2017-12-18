@@ -8,4 +8,155 @@
     tools:context="com.example.alexisblervaque.wikint.AddEvent"
     tools:showIn="@layout/activity_add_event">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.85">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nom de l'événement :"
+                    android:layout_margin="10dp"
+                    android:textStyle="bold"
+                    android:textSize="20dp"/>
+
+                <EditText
+                    android:id="@+id/nameModifyEvent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:textSize="15dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Date :"
+                    android:layout_margin="10dp"
+                    android:textStyle="bold"
+                    android:textSize="20dp"/>
+
+                <DatePicker
+                    android:id="@+id/dateDebutPicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:datePickerMode="spinner"
+                    android:calendarViewShown="false"
+                    android:startYear="2017"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Heure de début :"
+                    android:layout_margin="10dp"
+                    android:textStyle="bold"
+                    android:textSize="20dp"/>
+
+                <TimePicker
+                    android:id="@+id/heureDebutPicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:timePickerMode="spinner"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Heure de fin :"
+                    android:layout_margin="10dp"
+                    android:textStyle="bold"
+                    android:textSize="20dp"/>
+
+                <TimePicker
+                    android:id="@+id/heureFinPicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:timePickerMode="spinner"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Description :"
+                    android:layout_margin="10dp"
+                    android:textStyle="bold"
+                    android:textSize="20dp"/>
+
+                <EditText
+                    android:id="@+id/descriptionModifyEvent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:textSize="15dp"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lieu :"
+                    android:layout_margin="10dp"
+                    android:textStyle="bold"
+                    android:textSize="20dp"/>
+
+                <EditText
+                    android:id="@+id/EventLieu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:textSize="15dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Couverture de l'événement :"
+                    android:layout_margin="10dp"
+                    android:textStyle="bold"
+                    android:textSize="20dp"/>
+
+                <ImageView
+                    android:id="@+id/imageModifyEvent"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:scaleType="fitCenter"
+                    />
+                <Button
+                    android:id="@+id/buttonImageModifyEvent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Choisir un autre logo"/>
+
+
+
+
+            </LinearLayout>
+        </ScrollView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+            <Button
+                android:id="@+id/applyModifyEvent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Appliquer"/>
+            <Button
+                android:id="@+id/dontApplyModifyEvent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Ne pas appliquer"/>
+        </LinearLayout>
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

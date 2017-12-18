@@ -201,6 +201,7 @@ public class ManageAssoEvent extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getActivity(),AddEvent.class);
+                i.putExtra("nameOfNewEvent",String.valueOf(data.getEvents().size()));
                 startActivity(i);
             }
         });
