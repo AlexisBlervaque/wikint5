@@ -18,6 +18,15 @@ public class User implements Parcelable{
     private String firstName;
     private String lastName;
     private ArrayList<Integer> associationsId;
+    private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setToken(String token) {
+        this.email = email;
+    }
 
     @Override
     public String toString() {
@@ -27,10 +36,11 @@ public class User implements Parcelable{
     public User() {
     }
 
-    public User(String firstName, String lastName, ArrayList<Integer> associationsId) {
+    public User(String firstName, String lastName, ArrayList<Integer> associationsId, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.associationsId = associationsId;
+        this.email = email;
     }
 
     public User(DataSnapshot data)
@@ -45,12 +55,14 @@ public class User implements Parcelable{
             AssociationsId.add(idAssociation);
         }
         this.associationsId = AssociationsId;
+        this.email = data.child("email").getValue(String.class);
     }
 
 
     protected User(Parcel in) {
         firstName = in.readString();
         lastName = in.readString();
+        email = in.readString();
     }
 
     public static final Creator<User> CREATOR = new Creator<User>() {
@@ -99,5 +111,6 @@ public class User implements Parcelable{
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(firstName);
         dest.writeString(lastName);
+        dest.writeString(email);
     }
 }

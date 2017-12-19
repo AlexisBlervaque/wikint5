@@ -44,7 +44,7 @@ public class EventDetail extends AppCompatActivity {
         final Association asso = bundle.getParcelable("asso");
 
         final ImageView imageCover = (ImageView)findViewById(R.id.coverEventPicture);
-        StorageReference storageReference = FirebaseStorage.getInstance().getReference(event.getImages().get(0) + ".png");
+        StorageReference storageReference = FirebaseStorage.getInstance().getReference(event.getImages() + ".png");
         storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {

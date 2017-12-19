@@ -8,6 +8,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -18,25 +19,38 @@ public class Event implements Parcelable {
 
 
 
-    private int id;
 
     @Override
     public String toString() {
         return name;
     }
 
+
+    private int id;
     private String name;
     private Date firstDate;
     private Date endDate;
     private String description;
     private String lieu;
-    private ArrayList<String> images;
+    private String images;
     private int id_association;
 
 
     public Event(){}
 
-    public Event(int id, String name, Date firstDate, Date endDate, String description, String lieu, ArrayList<String> images, int id_association) {
+
+    public Event(int id, int id_association)
+    {
+        this.id = id;
+        this.name = "";
+        this.firstDate = Calendar.getInstance().getTime();
+        this.endDate = Calendar.getInstance().getTime();
+        this.description = "";
+        this.lieu = "";
+        this.id_association = id_association;
+    }
+
+    public Event(int id, String name, Date firstDate, Date endDate, String description, String lieu, String images, int id_association) {
         this.id = id;
         this.name = name;
         this.firstDate = firstDate;
@@ -49,30 +63,14 @@ public class Event implements Parcelable {
 
     public Event(DataSnapshot ds)
     {
-        gsonDate dateConverter = new gsonDate();
-
         this.id = ds.child("id").getValue(Integer.class);
         this.name = ds.child("name").getValue(String.class);
-
-        String dateString = ds.child("firstDate").getValue(String.class);
-        this.firstDate = dateConverter.convertToDate(dateString);
-        dateString = ds.child("endDate").getValue(String.class);
-        this.endDate = dateConverter.convertToDate(dateString);
+        this.firstDate = ds.child("firstDate").getValue(Date.class);
+        this.endDate = ds.child("endDate").getValue(Date.class);
         this.description = ds.child("description").getValue(String.class);
         this.lieu = ds.child("lieu").getValue(String.class);
-
-        DataSnapshot imagesData = ds.child("images");
-        ArrayList<String> images = new ArrayList<>();
-        for (int i = 0; i<ds.child("images").getChildrenCount();i++)
-        {
-            String image = imagesData.child(String.valueOf(i)).getValue(String.class);
-            images.add(image);
-        }
-
-        this.images = images;
+        this.images = ds.child("images").getValue(String.class);
         this.id_association = ds.child("id_association").getValue(Integer.class);
-
-
     }
 
 
@@ -82,7 +80,7 @@ public class Event implements Parcelable {
         name = in.readString();
         description = in.readString();
         lieu = in.readString();
-        images = in.createStringArrayList();
+        images = in.readString();
         id_association = in.readInt();
     }
 
@@ -131,11 +129,11 @@ public class Event implements Parcelable {
         this.lieu = lieu;
     }
 
-    public ArrayList<String> getImages() {
+    public String getImages() {
         return images;
     }
 
-    public void setImages(ArrayList<String> images) {
+    public void setImages(String images) {
         this.images = images;
     }
 
@@ -172,7 +170,7 @@ public class Event implements Parcelable {
         dest.writeString(name);
         dest.writeString(description);
         dest.writeString(lieu);
-        dest.writeStringList(images);
+        dest.writeString(images);
         dest.writeInt(id_association);
     }
 }

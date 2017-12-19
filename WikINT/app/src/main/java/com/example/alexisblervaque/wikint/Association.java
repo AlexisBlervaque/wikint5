@@ -47,9 +47,10 @@ public class Association implements Parcelable {
 
         DataSnapshot id_EventsData = ds.child("id_Events");
         ArrayList<Integer> id_Events = new ArrayList<>();
-        for (int i = 0; i<ds.child("id_Events").getChildrenCount();i++)
+        for (DataSnapshot dsInt : id_EventsData.getChildren())
         {
-            int id_Event = id_EventsData.child(String.valueOf(i)).getValue(Integer.class);
+
+            int id_Event = dsInt.getValue(Integer.class);
             id_Events.add(id_Event);
         }
         this.id_Events = id_Events;

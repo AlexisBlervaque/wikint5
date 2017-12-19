@@ -177,7 +177,7 @@ public class SignUp extends Activity {
 
                             ArrayList<Integer> AssociationIdDefault = new ArrayList<>();
                             AssociationIdDefault.add(-1);
-                            final User userInformation = new User(firstName,lastName,AssociationIdDefault);
+                            final User userInformation = new User(firstName,lastName,AssociationIdDefault,user.getEmail());
                             myRef.child("Users").child(user.getUid()).setValue(userInformation);
 
                             AlertDialog.Builder builder1 = new AlertDialog.Builder(SignUp.this);

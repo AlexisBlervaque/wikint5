@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity
         userID = userFire.getUid();
         data = new Data();
 
+
+
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {

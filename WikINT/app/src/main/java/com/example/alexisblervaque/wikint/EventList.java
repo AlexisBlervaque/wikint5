@@ -8,9 +8,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,8 +35,12 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Created by alexisblervaque on 13/12/2017.
@@ -201,7 +209,7 @@ public class EventList extends Fragment {
 
         // Image of the event
         final ImageView image = new ImageView(container.getContext());
-        storageReference = FirebaseStorage.getInstance().getReference(event.getImages().get(0) + ".png");
+        storageReference = FirebaseStorage.getInstance().getReference(event.getImages() + ".png");
         storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
@@ -229,7 +237,7 @@ public class EventList extends Fragment {
         LinearLayout NotificationContainer = new LinearLayout(context);
         NotificationContainer.setLayoutParams(paramsButton);
 
-        Spinner spinnerUsers = new Spinner(context);
+        final Spinner spinnerUsers = new Spinner(context);
         LinearLayout.LayoutParams paramsSpinnerEvent = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT);
         paramsSpinnerEvent.weight = (float)0.65;
         spinnerUsers.setLayoutParams(paramsSpinnerEvent);
@@ -246,12 +254,15 @@ public class EventList extends Fragment {
         Button notifyButton = new Button(context);
         LinearLayout.LayoutParams paramsModifyEvent = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT);
         paramsModifyEvent.weight = (float)0.35;
+        paramsModifyEvent.setMargins(0,15,10,15);
         notifyButton.setLayoutParams(paramsModifyEvent);
         notifyButton.setText("Notifier");
+        notifyButton.setBackgroundColor(Color.parseColor("#ff33b5e5"));
+        notifyButton.setTextColor(Color.WHITE);
         notifyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                User userSelected = (User) spinnerUsers.getSelectedItem();
             }
         });
 
@@ -261,10 +272,13 @@ public class EventList extends Fragment {
 
 
         Button buttonDetail = new Button(container.getContext());
-        buttonDetail.setLayoutParams(paramsButton);
+        LinearLayout.LayoutParams paramsButtonDetail = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        paramsButtonDetail.setMargins(15,5,15,15);
+        buttonDetail.setLayoutParams(paramsButtonDetail);
         buttonDetail.setGravity(Gravity.CENTER);
         buttonDetail.setText("Détails");
-
+        buttonDetail.setTextColor(Color.WHITE);
+        buttonDetail.setBackgroundColor(Color.parseColor("#ff33b5e5"));
         buttonDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -296,4 +310,7 @@ public class EventList extends Fragment {
 
         return result;
     }
+
+
+
 }

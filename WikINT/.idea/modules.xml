@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/WikINT.iml" filepath="$PROJECT_DIR$/WikINT.iml" />
-      <module fileurl="file://C:\Users\Val\Documents\wikint5\WikINT\.idea\modules\WikINT.iml" filepath="C:\Users\Val\Documents\wikint5\WikINT\.idea\modules\WikINT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WikINT.iml" filepath="$PROJECT_DIR$/.idea/modules/WikINT.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

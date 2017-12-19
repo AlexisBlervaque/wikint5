@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.alexisblervaque.wikint.AddEvent"
-    tools:showIn="@layout/activity_add_event">
+    tools:context="com.example.alexisblervaque.wikint.AddModifyEvent"
+    tools:showIn="@layout/activity_add_modify_event">
 
 
     <LinearLayout
@@ -131,7 +131,7 @@
                     android:id="@+id/buttonImageModifyEvent"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Choisir un autre logo"/>
+                    android:text="Choisir une photo"/>
 
 
 
@@ -149,13 +149,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
-                android:text="Appliquer"/>
+                android:text="Ajouter"/>
             <Button
                 android:id="@+id/dontApplyModifyEvent"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
-                android:text="Ne pas appliquer"/>
+                android:text="Ne pas ajouter"/>
         </LinearLayout>
     </LinearLayout>
 

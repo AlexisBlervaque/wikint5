@@ -2,25 +2,17 @@ package com.example.alexisblervaque.wikint;
 
 import android.annotation.SuppressLint;
 import android.app.Fragment;
-import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.GridLayout;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -29,8 +21,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
@@ -200,8 +190,13 @@ public class ManageAssoEvent extends Fragment {
         addEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(),AddEvent.class);
-                i.putExtra("nameOfNewEvent",String.valueOf(data.getEvents().size()));
+                Intent i = new Intent(getActivity(),AddModifyEvent.class);
+                Event event = new Event(data.getEvents().size(), asso.getId());
+                Bundle b = new Bundle();
+                b.putParcelable("event", event);
+                i.putExtra("eventBundle", b);
+                i.putExtra("firstDate",event.getFirstDate().getTime());
+                i.putExtra("endDate",event.getEndDate().getTime());
                 startActivity(i);
             }
         });
@@ -210,7 +205,7 @@ public class ManageAssoEvent extends Fragment {
         LinearLayout modifyEventContainer = new LinearLayout(context);
         modifyEventContainer.setLayoutParams(paramsButton);
 
-        Spinner spinnerEvent = new Spinner(context);
+        final Spinner spinnerEvent = new Spinner(context);
         LinearLayout.LayoutParams paramsSpinnerEvent = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT);
         paramsSpinnerEvent.weight = (float)0.65;
         spinnerEvent.setLayoutParams(paramsSpinnerEvent);
@@ -229,6 +224,20 @@ public class ManageAssoEvent extends Fragment {
         paramsModifyEvent.weight = (float)0.35;
         modifyEvent.setLayoutParams(paramsModifyEvent);
         modifyEvent.setText("Modifier");
+        modifyEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(),AddModifyEvent.class);
+                Event event = (Event)spinnerEvent.getSelectedItem();
+                Bundle b = new Bundle();
+                b.putParcelable("event", event);
+                i.putExtra("eventBundle", b);
+                i.putExtra("firstDate",event.getFirstDate().getTime());
+                i.putExtra("endDate",event.getEndDate().getTime());
+                startActivity(i);
+            }
+        });
+
 
         modifyEventContainer.addView(spinnerEvent);
         modifyEventContainer.addView(modifyEvent);
